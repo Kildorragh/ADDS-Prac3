@@ -1,24 +1,19 @@
 #include "Reverser.h"
 #include <iostream>
-#include <cmath>
-
-int Reverser::checkNoOfDigits(int digits){
-    if (digits < 10){
-        return 1;
-    } else {
-        digits = digits/10;
-        //std::cout << "Digits now " << digits << std::endl;
-        return 1 + checkNoOfDigits(digits);
-    }
-}
 
 int Reverser::reverseDigit(int digits){
-    int noOfDigits = this->checkNoOfDigits(digits);
-    int index = noOfDigits;
-    int reversedValue;
-    if (index == 0){
-        return reversedValue;
+    //aggregator default value usually 1 if multiplying or 0 if adding
+    int helperResult = 0;
+    helperResult = reverseDigitHelper(helperResult, digits);
+    return helperResult;
+};
+
+int Reverser::reverseDigitHelper(int& helperResult, int digits){
+    if (digits == 0){
+        return helperResult;
     } else {
-        return 
+        helperResult = (helperResult * 10) + (digits % 10);
+        digits = digits/10;
+        return reverseDigitHelper(helperResult, digits);
     }
 }

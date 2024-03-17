@@ -4,7 +4,7 @@
 class Reverser{
     public:
     int reverseDigit(int digits);
-    int checkNoOfDigits(int digits);
+    int reverseDigitHelper(int& helperResult, int digits);
 };    
 
 #endif
