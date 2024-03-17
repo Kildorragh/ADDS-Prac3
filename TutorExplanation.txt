@@ -1,0 +1,17 @@
+int reversedigit(int number){
+    //i need an aggregator , most of the time default value is 0 if adding, 1 if multiplying
+    int result = 0;
+    result = reversedigithelper(result,number);
+    return result;
+}
+
+int reverseDigitHelper(int& result, int number){
+
+}
+
+
+
+
+f(0, 78649
+becomes f(0*10)+9, 7864);
+becomes f(9*10+4)
